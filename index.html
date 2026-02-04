@@ -1,42 +1,325 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Tilboon</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
-<body>
-  <header class="container">
-    <h1>Tilboon</h1>
-    <p>Hi! Welcome to my UCLA webspace.</p>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#projects">Projects</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Brair 'Tilboon' Elberier — Academic Homepage</title>
+    <meta
+      name="description"
+      content="Brair (Tilboon) Elberier — robotics, embedded systems, low-power autonomous microrobots."
+    />
 
-  <main class="container">
-    <section id="about">
-      <h2>About</h2>
-      <p>Write a short intro here.</p>
-    </section>
+    <!-- fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Slab:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
 
-    <section id="projects">
-      <h2>Projects</h2>
-      <ul>
-        <li>Project 1</li>
-        <li>Project 2</li>
-      </ul>
-    </section>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-    <section id="contact">
-      <h2>Contact</h2>
-      <p>Email: you@ucla.edu</p>
-    </section>
-  </main>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
 
-  <script src="js/main.js"></script>
-</body>
+    <header class="site-header" role="banner">
+      <!-- Hamburger (mobile only) -->
+      <button
+        class="nav-toggle"
+        id="nav-toggle"
+        type="button"
+        aria-controls="nav-primary"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <!-- Hamburger icon -->
+        <svg class="icon-ham" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M3 6h18M3 12h18M3 18h18"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            fill="none"
+          />
+        </svg>
+        <!-- Close icon -->
+        <svg class="icon-close" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
+          <path
+            d="M6 6l12 12M18 6l-12 12"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            fill="none"
+          />
+        </svg>
+      </button>
+
+      <div class="container header-grid">
+        <div class="header-left">
+          <img
+            class="avatar"
+            src="assets/profile.jpg"
+            srcset="assets/profile.jpg 1x, assets/profile@2x.jpg 2x"
+            alt="Portrait of Brair Tilboon Elberier"
+            width="200"
+            height="200"
+            loading="lazy"
+          />
+        </div>
+
+        <div class="header-right">
+          <h1 class="site-title">Brair 'Tilboon' Elberier</h1>
+          <p class="lede">
+            Ph.D. Student, Electrical &amp; Computer Engineering · Robotics
+          </p>
+          <p class="lede">Samueli School of Engineering, University of California, Los Angeles (UCLA)</p>
+          <p class="lede">Graduate Research Assistant · LEMUR Lab (Advisor: Ankur Mehta)</p>
+
+          <p class="meta">
+            <a href="https://scholar.google.com/citations?user=KkppI1QAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a> ·
+            <a href="https://www.linkedin.com/in/tilboon" target="_blank" rel="noreferrer">LinkedIn</a> ·
+            <a href="assets/cv.pdf" target="_blank" rel="noreferrer">CV</a> ·
+            <a href="https://www.youtube.com/channel/UCPlnun2boPcohBWyB3QoJ5A?app=desktop" target="_blank" rel="noreferrer">YouTube</a> ·
+            <a href="https://github.com/tilboon" target="_blank" rel="noreferrer">GitHub</a>
+          </p>
+
+          <!-- Primary nav -->
+          <nav class="nav" id="nav-primary" aria-label="Primary">
+            <ul>
+              <li><a href="#updates">Updates</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#research">Research</a></li>
+              <li><a href="#publications">Publications</a></li>
+              <li><a href="#teaching">Teaching</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#site-footer">Contact</a></li>
+            </ul>
+          </nav>
+        </div>
+      </div>
+    </header>
+
+    <main id="main">
+      <!-- Updates -->
+      <section id="updates" class="section">
+        <div class="container">
+          <h2>Updates</h2>
+
+          <ul class="updates">
+            <li class="update">
+              <div class="update-meta">May 2024 · Fellowship</div>
+              <div class="update-title">National GEM Consortium Fellow</div>
+              <div class="update-actions"><a href="#" target="_blank" rel="noreferrer">Details</a></div>
+            </li>
+
+            <li class="update">
+              <div class="update-meta">June 2022 · Grant</div>
+              <div class="update-title">NASA Space Grant Recipient (UW CubeSat SOC-I)</div>
+              <div class="update-actions"><a href="#" target="_blank" rel="noreferrer">Project</a></div>
+            </li>
+
+            <li class="update">
+              <div class="update-meta">August 2021 · Scholarship</div>
+              <div class="update-title">Boeing Emerging Leader Scholarship (UW College of Engineering)</div>
+              <div class="update-actions"><a href="#" target="_blank" rel="noreferrer">Announcement</a></div>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- About -->
+      <section id="about" class="section">
+        <div class="container">
+          <h2>Biography</h2>
+
+          <p>
+            I’m a Ph.D. student in Electrical &amp; Computer Engineering at UCLA (GPA 3.9), focused on
+            low-power autonomous robotics and embedded systems. My work spans microrobot autonomy, swarm
+            navigation, on-device sensing, and robust control/estimation for resource-constrained platforms.
+          </p>
+
+          <p>
+            I’m a Graduate Research Assistant in the LEMUR Lab (Advisor: Ankur Mehta), working on
+            hardware/software co-design for small-scale, battery-free robots, including state estimation
+            (e.g., Kalman filtering) and communication/control algorithms for swarm navigation.
+          </p>
+
+          <h3>Education</h3>
+          <ul class="bullets">
+            <li><strong>Ph.D., Electrical &amp; Computer Engineering</strong>, UCLA (Sep 2025 – Jun 2029), GPA 3.9</li>
+            <li><strong>M.S., Electrical &amp; Computer Engineering</strong>, UCLA (Sep 2023 – Jun 2025), GPA 3.9</li>
+            <li><strong>B.S., Electrical &amp; Computer Engineering</strong>, University of Washington (Sep 2017 – Jun 2022), Major GPA 3.64</li>
+          </ul>
+
+          <p class="meta" style="margin-top: 10px">
+            <a href="assets/cv.pdf" target="_blank" rel="noreferrer">Full CV (PDF)</a>
+          </p>
+        </div>
+      </section>
+
+      <!-- Research -->
+      <section id="research" class="section alt">
+        <div class="container">
+          <h2>Research &amp; Experience</h2>
+
+          <div class="grid-2">
+            <article class="card">
+              <h3 class="h4">LEMUR Lab (UCLA) — Battery-free autonomy &amp; swarm navigation</h3>
+              <p class="muted">
+                Hardware/software development for low-power, small-scale, battery-free autonomous robots. Includes
+                estimation-driven control (Kalman filtering) and communication/control algorithms for swarm navigation.
+              </p>
+              <p class="meta">
+                <a href="#" target="_blank" rel="noreferrer">Lab</a> ·
+                <a href="#" target="_blank" rel="noreferrer">Project page</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3 class="h4">MIT Lincoln Laboratory — Thermal detection &amp; closed-loop UAV guidance</h3>
+              <p class="muted">
+                Built an end-to-end vision/control stack for real-time thermal detection and autonomous UAV guidance.
+                Partnered with ModalAI to extend platform capabilities and transitioned the system to ARL.
+              </p>
+              <p class="meta">
+                <a href="#" target="_blank" rel="noreferrer">Overview</a> ·
+                <a href="#" target="_blank" rel="noreferrer">Demo</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3 class="h4">Iyer Lab (UW) — Battery-free origami gliding sensor nodes</h3>
+              <p class="muted">
+                Designed embedded, battery-free wireless gliding sensor nodes with origami body triggered by wireless
+                actuators; implemented low-power wireless data collection on Nordic nRF52 platforms.
+              </p>
+              <p class="meta">
+                <a href="#" target="_blank" rel="noreferrer">Project</a> ·
+                <a href="#publications">Related publication</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3 class="h4">Reality Lab (UW) — VR interaction research (Unity)</h3>
+              <p class="muted">
+                Developed a VR system to study human interaction with alternate species (Giant Pacific Octopus),
+                including data collection and physics-based mapping of human motion to a simulated model using Unity.
+              </p>
+              <p class="meta">
+                <a href="#" target="_blank" rel="noreferrer">Video</a>
+              </p>
+            </article>
+
+            <article class="card">
+              <h3 class="h4">UW CubeSat SOC-I — Secure communications (NASA Space Grant)</h3>
+              <p class="muted">
+                Built message encryption/validation via HMAC and configured data packet/protocol setup for uplink and
+                downlink communications.
+              </p>
+              <p class="meta">
+                <a href="#" target="_blank" rel="noreferrer">Mission</a>
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- Publications -->
+      <section id="publications" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <h2>Selected Publications</h2>
+            <p class="actions">
+              <a class="button" href="https://scholar.google.com/citations?user=KkppI1QAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+            </p>
+          </div>
+
+          <article class="pub">
+            <div class="pub-details">
+              <h3 class="pub-title">Computer Vision Informed Parameter Estimation</h3>
+              <p class="pub-authors">Elberier B., Hernandez M., Mehta A.</p>
+              <p class="pub-venue"><em>IEEE CASE</em>, 2025.</p>
+              <p class="pub-links">
+                <a href="#" target="_blank" rel="noreferrer">PDF</a> ·
+                <a href="#" target="_blank" rel="noreferrer">DOI</a>
+              </p>
+            </div>
+          </article>
+
+          <article class="pub">
+            <div class="pub-details">
+              <h3 class="pub-title">Autonomous Battery-free Origami Robots for Aerial Sensor Deployment</h3>
+              <p class="pub-authors">Johnson K., Arroyos V., Elberier T., Fuller S., Iyer V., Gollakota S.</p>
+              <p class="pub-venue"><em>Science Robotics</em>, 2023.</p>
+              <p class="pub-links">
+                <a href="#" target="_blank" rel="noreferrer">PDF</a> ·
+                <a href="#" target="_blank" rel="noreferrer">DOI</a> ·
+                <a href="#" target="_blank" rel="noreferrer">Code</a>
+              </p>
+            </div>
+          </article>
+
+          <p class="meta" style="margin-top: 14px">
+            See CV for full publication list and details.
+          </p>
+        </div>
+      </section>
+
+      <!-- Teaching -->
+      <section id="teaching" class="section alt">
+        <div class="container">
+          <h2>Teaching &amp; Mentorship</h2>
+
+          <h3>Teaching Assistant / Instructor</h3>
+          <ul class="bullets">
+            <li>UCLA ECE — Systems Design Capstone (ECE180DA/DW)</li>
+            <li>UW Allen School — Design of Digital Circuits &amp; Systems (CSE371); Introduction to Digital Design (CSE369)</li>
+            <li>UW ECE — Advanced Technical Communications (EE393); The University Community (GENST199)</li>
+            <li>Seattle Public Schools — AVELA course instructor (Intro Embedded Systems; Intermediate Python)</li>
+          </ul>
+
+          <h3 style="margin-top: 16px">Selected Awards</h3>
+          <ul class="bullets">
+            <li>National GEM Consortium Fellowship (2024)</li>
+            <li>NASA Space Grant Recipient (2022)</li>
+            <li>Boeing Emerging Leader Scholarship (2021)</li>
+            <li>NACME Corporate Scholarship (2021)</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section id="skills" class="section">
+        <div class="container">
+          <h2>Skills</h2>
+
+          <div class="grid-2">
+            <div class="card soft">
+              <h3 class="h4">Programming</h3>
+              <p class="muted">Java, C/C++, C#, SystemVerilog, Python, Swift, SQL, Bash, Assembly</p>
+            </div>
+
+            <div class="card soft">
+              <h3 class="h4">Tools &amp; Platforms</h3>
+              <p class="muted">Arduino, Raspberry Pi, Cadence Virtuoso, ModelSim, Unity, Git, LTSpice, HSpice</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" id="site-footer">
+      <div class="container">
+        <p class="meta">
+          &copy; <span id="year"></span> Brair 'Tilboon' Elberier. Last updated <span id="updated"></span>.<br />
+          Email: <a href="mailto:tilboon.elberier@gmail.com">tilboon.elberier@gmail.com</a><br />
+          LinkedIn: <a href="https://www.linkedin.com/in/tilboon" target="_blank" rel="noreferrer">linkedin.com/in/tilboon</a><br />
+          Location: Los Angeles, CA
+        </p>
+      </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
 </html>
