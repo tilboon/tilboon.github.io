@@ -31,6 +31,10 @@
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
+    <link rel="icon" href="favicon.svg" type="image/svg+xml" />
+    <link rel="icon" href="favicon-32.png" type="image/png" sizes="32x32" />
+    <link rel="apple-touch-icon" href="apple-touch-icon.png" />
+    <meta name="theme-color" content="#2774ae" />
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -81,7 +85,7 @@
         </div>
 
         <div class="hero-inner container">
-          <img
+          <img decoding="async"
             class="hero-portrait"
             src="assets/profile-400.jpg"
             srcset="assets/profile-400.jpg 400w, assets/profile-800.jpg 800w"
@@ -104,9 +108,9 @@
             <a class="pill" href="assets/cv.pdf" target="_blank" rel="noopener">CV</a>
           </p>
 
-          <a class="latest" href="#publications">
-            <span class="latest-tag">New</span>
-            <span>Computer Vision Informed Parameter Estimation — IEEE CASE 2025</span>
+          <a class="latest" href="#millimobile">
+            <span class="latest-tag">Now</span>
+            <span>MilliMobile Vision — onboard intelligence for insect-scale robots</span>
           </a>
         </div>
 
@@ -169,118 +173,152 @@
             </ul>
 
             <h3 class="glance-title">Education</h3>
-            <ul class="edu">
-              <li><strong>Ph.D., Electrical &amp; Computer Engineering</strong><span>UCLA · 2025–present</span></li>
-              <li><strong>M.S., Electrical &amp; Computer Engineering</strong><span>UCLA · 2025</span></li>
-              <li><strong>B.S., Electrical &amp; Computer Engineering</strong><span>University of Washington · 2022</span></li>
+            <ul class="edu edu-logos">
+              <li><img decoding="async" src="assets/img/logos/ucla.svg" alt="" /><div><strong>Ph.D., Electrical &amp; Computer Engineering</strong><span>UCLA · 2025–present</span></div></li>
+              <li><img decoding="async" src="assets/img/logos/ucla.svg" alt="" /><div><strong>M.S., Electrical &amp; Computer Engineering</strong><span>UCLA · 2025</span></div></li>
+              <li><img decoding="async" src="assets/img/logos/uw.svg" alt="" /><div><strong>B.S., Electrical &amp; Computer Engineering</strong><span>University of Washington · 2022</span></div></li>
             </ul>
           </aside>
         </div>
       </section>
 
       <!-- ============ RESEARCH: sticky visual + scrolling steps ============ -->
+      <!-- ============ RESEARCH: why tiny robots, told as a pinned slider ============
+           Each .step picks the .story-visual with the same data-step. -->
       <section class="section research" id="research">
         <div class="container">
           <p class="kicker reveal">Research</p>
           <h2 class="display reveal">Autonomy at the smallest scales.</h2>
+          <p class="research-lede reveal">
+            Near-gram robots can enter gaps, cavities, dense vegetation, machinery, and damaged structures that
+            conventional robots and people cannot, and they can be inexpensive enough to deploy in numbers. But at
+            this size, each milligram of mass, milliwatt of power, and kilobyte of memory is a meaningful share of
+            what the robot has. Sensing, computation, communication, power, and actuation all compete for the same
+            few grams.
+          </p>
+          <p class="research-q reveal">
+            The question is not only how to miniaturize each component, but how to make the <em>whole robot</em>
+            autonomous within that budget.
+          </p>
         </div>
 
         <div class="container story">
-          <!-- Visuals: one per step, cross-fade as steps become active.
-               To use a photo, replace a .story-card.tile with <img class="story-card" src="..." alt="">. -->
           <div class="story-visuals" aria-hidden="true">
-            <div class="story-visual is-active" data-step="0">
-              <div class="story-card tile">
-                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
-                  <path d="M16 18L32 30M32 30L48 16M32 30L22 46M32 30L46 44M22 46L46 44M16 18L22 46" opacity=".55" />
-                  <circle cx="16" cy="18" r="4.5" fill="currentColor" />
-                  <circle cx="48" cy="16" r="4.5" fill="currentColor" />
-                  <circle cx="32" cy="30" r="5.5" fill="currentColor" />
-                  <circle cx="22" cy="46" r="4.5" fill="currentColor" />
-                  <circle cx="46" cy="44" r="4.5" fill="currentColor" />
-                </svg>
-                <span>LEMUR Lab · UCLA</span>
-              </div>
-            </div>
-            <div class="story-visual" data-step="1">
-              <div class="story-card tile">
-                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
-                  <path d="M18 18L46 46M46 18L18 46" />
-                  <rect x="26" y="26" width="12" height="12" rx="3" fill="currentColor" />
-                  <circle cx="16" cy="16" r="8" opacity=".6" />
-                  <circle cx="48" cy="16" r="8" opacity=".6" />
-                  <circle cx="16" cy="48" r="8" opacity=".6" />
-                  <circle cx="48" cy="48" r="8" opacity=".6" />
-                </svg>
-                <span>MIT Lincoln Laboratory</span>
-              </div>
-            </div>
-            <div class="story-visual" data-step="2">
-              <img class="story-card" src="assets/img/microflier-closeup.jpg" alt="" loading="lazy" />
-            </div>
-            <div class="story-visual" data-step="3">
-              <div class="story-card tile">
-                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
-                  <path d="M10 22h44a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H40l-4-6h-8l-4 6H10a4 4 0 0 1-4-4V26a4 4 0 0 1 4-4z" />
-                  <circle cx="21" cy="33" r="5" fill="currentColor" />
-                  <circle cx="43" cy="33" r="5" fill="currentColor" />
-                  <path d="M18 22l4-6h20l4 6" opacity=".6" />
-                </svg>
-                <span>UW Reality Lab</span>
-              </div>
-            </div>
+            <figure class="story-visual is-active" data-step="0">
+              <video
+                class="story-card story-contain"
+                src="assets/video/millimobile-arena.mp4"
+                poster="assets/img/millimobile-arena.jpg"
+                muted
+                loop
+                playsinline
+                preload="none"
+              ></video>
+              <figcaption>MilliMobile Vision · arena view and onboard camera, tracking a live beetle</figcaption>
+            </figure>
+            <figure class="story-visual" data-step="1">
+              <video
+                class="story-card"
+                src="assets/video/microflier-transition.mp4"
+                poster="assets/img/microflier-transition.jpg"
+                muted
+                loop
+                playsinline
+                preload="none"
+              ></video>
+              <figcaption>Origami microflier · solar-powered actuation from tumbling to stable state</figcaption>
+            </figure>
+            <figure class="story-visual" data-step="2">
+              <video
+                class="story-card story-contain"
+                src="assets/video/cvipe-tracking.mp4"
+                poster="assets/img/cvipe-tracking.jpg"
+                muted
+                loop
+                playsinline
+                preload="none"
+              ></video>
+              <figcaption>CV-informed parameter estimation · tracking wheel and body motion to estimate suspension dynamics</figcaption>
+            </figure>
           </div>
 
           <div class="story-steps">
             <article class="step is-active" data-step="0">
-              <p class="step-meta">LEMUR Lab, UCLA · 2023–present</p>
-              <h3>Battery-free autonomy and swarm navigation</h3>
+              <p class="step-meta">01 — Onboard perception</p>
+              <h3>Perception that fits the compute budget</h3>
+              <p class="step-thesis">Track cheaply on every frame. Classify only when identity matters.</p>
               <p>
-                Designing hardware and communication algorithms that let swarms of small, battery-free robots
-                navigate on their own, with Kalman-filter state estimation informed by computer vision.
+                A single monochrome camera and a microcontroller must share memory and cycles with inference, the radio,
+                and motor control. I design perception–control architectures that keep lightweight localization in the
+                closed loop and invoke learned classification selectively, so perception never starves locomotion.
               </p>
+              <p class="step-links"><a href="#millimobile">MilliMobile Vision →</a></p>
             </article>
             <article class="step" data-step="1">
-              <p class="step-meta">MIT Lincoln Laboratory · 2024–present</p>
-              <h3>Thermal detection and closed-loop UAV guidance</h3>
+              <p class="step-meta">02 — Harvested energy</p>
+              <h3>Operation on harvested energy</h3>
+              <p class="step-thesis">Shape behavior around the energy the environment provides.</p>
               <p>
-                An end-to-end vision and control stack for real-time thermal detection and autonomous UAV guidance,
-                extended with ModalAI and transitioned to the Army Research Laboratory.
+                Batteries add mass and eventually run out. Battery-free platforms like the solar-powered origami
+                microflier collect their own power and spend it in brief, deliberate actions, so energy availability
+                becomes part of the operating strategy rather than a limit imposed on it.
               </p>
+              <p class="step-links"><a href="#feature">Origami microfliers →</a></p>
             </article>
             <article class="step" data-step="2">
-              <p class="step-meta">Iyer Lab, University of Washington · 2021–2022</p>
-              <h3>Origami microfliers for aerial sensor deployment</h3>
+              <p class="step-meta">03 — Physical understanding</p>
+              <h3>Physical models from observation</h3>
+              <p class="step-thesis">Measure the world before predicting how to act in it.</p>
               <p>
-                Solar-powered gliding sensor nodes whose origami bodies change shape mid-air to control how far
-                they drift. I built the nRF52 firmware for low-power sensing and Bluetooth.
+                Predicting how a robot will interact with its surroundings requires knowing their intrinsic properties.
+                I use computer vision to capture motion, relate it to a physics-based model, and estimate the most
+                probable parameters with Bayesian inference.
               </p>
-            </article>
-            <article class="step" data-step="3">
-              <p class="step-meta">Reality Lab, University of Washington · 2021–2022</p>
-              <h3>VR interfaces for cross-species embodiment</h3>
-              <p>
-                A Unity VR system for testing how people can inhabit another species' body, mapping human motion
-                onto a physics-driven model of a Giant Pacific Octopus.
-              </p>
+              <p class="step-links"><a href="#pub-cvipe">IEEE CASE 2025 →</a></p>
             </article>
           </div>
         </div>
       </section>
 
-      <!-- ============ FEATURE: image grows to fill the screen ============ -->
+      <!-- ============ FEATURE: MilliMobile Vision (standard feature format) ============ -->
+      <section class="pin feature" id="millimobile" data-scrub="pin" aria-labelledby="mm-title">
+        <div class="pin-inner">
+          <div class="feature-media">
+            <video
+              src="assets/video/millimobile-vision.mp4"
+              poster="assets/img/millimobile-vision.jpg"
+              muted
+              loop
+              playsinline
+              preload="metadata"
+              aria-label="Top-down view: MilliMobile Vision autonomously chasing a moving target across a table"
+            ></video>
+          </div>
+          <div class="feature-copy container">
+            <p class="kicker">Featured · MilliMobile Vision · IEEE RA&#8209;L, in preparation</p>
+            <h2 class="display" id="mm-title">Search, identify, follow. Entirely onboard.</h2>
+            <dl class="stats">
+              <div><dt>&lt;<span data-count="4">4</span> g</dt><dd>total system mass</dd></div>
+              <div><dt><span data-count="70">70</span> cm/s</dt><dd>maximum speed</dd></div>
+              <div><dt><span data-count="27">27</span></dt><dd>insect classes identified onboard</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FEATURE: Origami Microfliers (standard feature format) ============ -->
       <section class="pin feature" id="feature" data-scrub="pin" aria-labelledby="feature-title">
         <div class="pin-inner">
           <div class="feature-media">
-            <img src="assets/img/microflier-flight.jpg" alt="Time-lapse of an origami microflier changing shape as it falls" />
+            <img decoding="async" src="assets/img/microflier-flight.jpg" alt="Time-lapse of an origami microflier changing shape as it falls" />
           </div>
           <div class="feature-copy container">
-            <p class="kicker">Featured · <em>Science Robotics</em> 2023</p>
-            <h2 class="display" id="feature-title">Shape-changing flight, powered by sunlight.</h2>
+            <p class="kicker">Featured · Origami Microfliers · <em>Science Robotics</em> 2023</p>
+            <h2 class="display" id="feature-title">Shape changes the fall. Sunlight powers the change.</h2>
             <dl class="stats">
-              <div><dt><span data-count="414">414</span> mg</dt><dd>total weight</dd></div>
-              <div><dt><span data-count="98">98</span> m</dt><dd>flight distance</dd></div>
-              <div><dt><span data-count="60">60</span> m</dt><dd>Bluetooth range</dd></div>
+              <div><dt><span data-count="414">414</span> mg</dt><dd>total system mass</dd></div>
+              <div><dt><span data-count="98">98</span> m</dt><dd>outdoor dispersal distance</dd></div>
+              <div><dt><span data-count="60">60</span> m</dt><dd>Bluetooth range on solar power</dd></div>
             </dl>
           </div>
         </div>
@@ -294,35 +332,187 @@
             <a class="pill" href="https://scholar.google.com/citations?user=KkppI1QAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
           </div>
 
-          <!-- IEEE CASE 2025 -->
-          <article class="pub-feature reveal">
+          <!-- MilliMobile Vision (in preparation) -->
+          <!-- TODO: confirm the full author list and order -->
+          <article class="pub-feature reveal" id="pub-mmv">
             <div class="pub-media-left">
-              <!-- Swap this tile for a paper figure: <img class="pub-thumb" src="assets/img/..." alt="..."> -->
-              <div class="pub-thumb tile" aria-hidden="true">
-                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
-                  <path d="M8 20V12h8M48 12h8v8M56 44v8h-8M16 52H8v-8" />
-                  <circle cx="32" cy="32" r="10" />
-                  <path d="M32 16v8M32 40v8M16 32h8M40 32h8" opacity=".6" />
-                  <circle cx="32" cy="32" r="2.5" fill="currentColor" />
+              <img decoding="async"
+                class="pub-thumb"
+                src="assets/img/millimobile-platform.jpg"
+                alt="Two views of the MilliMobile Vision robot"
+                loading="lazy"
+              />
+            </div>
+            <div class="pub-details">
+              <p class="pub-status">In preparation</p>
+              <h3 class="pub-title">MilliMobile Vision: Onboard Intelligence for Insect-Scale Mobile Robots</h3>
+              <p class="pub-authors"><strong>B. T. Elberier</strong>, et al.</p>
+              <p class="pub-venue">To be submitted to <em>IEEE Robotics and Automation Letters (RA-L)</em>.</p>
+              <p class="pub-highlight">A &lt;4 g, 2×2×2 cm platform that autonomously searches for, identifies, approaches, and follows a freely moving live insect using only onboard vision and computation.</p>
+            </div>
+            <div class="pub-media-right">
+              <a class="poster-link" href="assets/img/millimobile-tracking-figure.jpg" target="_blank" rel="noopener" aria-label="Open the tracking figure">
+                <img decoding="async"
+                  class="pub-thumb poster-thumb"
+                  src="assets/img/millimobile-tracking-figure.jpg"
+                  alt="Arena top view with robot and beetle trajectories, alongside the onboard camera view at three moments: no target, target detected, closer view"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+            <details class="abstract">
+              <summary>Abstract</summary>
+              <p>
+                Vision-based autonomy can substantially expand the capabilities of insect-scale mobile robots, but
+                integrating visual perception and control under strict size, weight, and power (SWaP) constraints
+                remains challenging at the near-gram scale. At this size, camera capture, onboard inference, wireless
+                communication, and motor control must share severely constrained computational and memory resources
+                while maintaining perception rates sufficient for closed-loop behavior. We present MilliMobile Vision,
+                an extensible mobile robotic platform that integrates onboard visual perception, inference, and
+                closed-loop control within a system weighing less than 4 g and measuring 2×2×2 cm. The platform uses
+                off-the-shelf components and an extensible hardware architecture with exposed interfaces for
+                integrating additional sensors and peripherals, while its wheel-based locomotion enables speeds up to
+                70 cm/s. We develop a compute-aware perception–control architecture that separates lightweight visual
+                detection and tracking from computationally intensive learned classification. Using only a single
+                monochrome camera for environmental perception, lightweight image processing provides target
+                localization and obstacle awareness for closed-loop navigation at approximately 3 Hz, while a 27-class
+                neural network is selectively invoked for onboard insect identification with approximately 80%
+                validation accuracy. Together, these components enable an untethered closed-loop task in which the
+                robot autonomously searches for, identifies, approaches, and follows small moving targets using only
+                onboard visual feedback and computation. This hierarchical perception strategy reserves learned
+                inference for observations where semantic information is required, preserving visual feedback for
+                responsive locomotion under constrained onboard compute and memory. We characterize the resulting
+                perception latency, inference, and closed-loop control trade-offs and demonstrate sustained autonomous
+                tracking of continuously moving targets, including a freely moving live insect.
+              </p>
+            </details>
+          </article>
+
+          <!-- IEEE CASE 2025 -->
+          <article class="pub-feature reveal" id="pub-cvipe">
+            <div class="pub-media-left">
+              <!-- Pipeline figure drawn from the paper's three stages. Swap for a paper figure if you prefer:
+                   <img decoding="async" class="pub-thumb" src="assets/img/..." alt="..."> -->
+              <figure class="pub-thumb pub-figure">
+                <svg
+                  viewBox="0 0 480 270"
+                  role="img"
+                  aria-label="Pipeline: capture a system's motion on video, relate it to a physics-based model, then estimate its parameters with Bayesian inference over a bank of Kalman filters"
+                >
+                  <defs>
+                    <marker id="arw" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto">
+                      <path d="M0 0L10 5L0 10z" fill="#ffffff" fill-opacity=".7" />
+                    </marker>
+                  </defs>
+                  <text x="20" y="34" class="fig-kicker">CV-informed parameter estimation</text>
+                  <g class="fig-badge">
+                    <rect x="352" y="18" width="108" height="24" rx="12" />
+                    <text x="406" y="34.5" text-anchor="middle">MAPE 3.96%</text>
+                  </g>
+
+                  <!-- stage boxes -->
+                  <g class="fig-box">
+                    <rect x="20" y="56" width="124" height="128" rx="14" />
+                    <rect x="178" y="56" width="124" height="128" rx="14" />
+                    <rect x="336" y="56" width="124" height="128" rx="14" />
+                  </g>
+                  <g class="fig-arrow">
+                    <line x1="148" y1="120" x2="172" y2="120" marker-end="url(#arw)" />
+                    <line x1="306" y1="120" x2="330" y2="120" marker-end="url(#arw)" />
+                  </g>
+
+                  <!-- 1: camera + noisy time series -->
+                  <g class="fig-ink">
+                    <rect x="54" y="80" width="56" height="38" rx="7" />
+                    <rect x="64" y="74" width="18" height="7" rx="2" />
+                    <circle cx="82" cy="99" r="11" />
+                    <circle cx="82" cy="99" r="4" class="fig-fill" />
+                    <polyline
+                      class="fig-accent"
+                      points="32,150 40,141 46,146 52,134 58,140 64,132 70,146 76,154 82,150 88,160 94,154 100,146 106,150 112,138 118,142 124,134 132,140"
+                    />
+                  </g>
+
+                  <!-- 2: spring-mass-damper model -->
+                  <g class="fig-ink">
+                    <line x1="212" y1="76" x2="268" y2="76" />
+                    <polyline points="240,76 240,82 230,86 250,92 230,98 250,104 240,108 240,114" />
+                    <rect x="224" y="114" width="32" height="24" rx="4" class="fig-fill-soft" />
+                    <text x="240" y="130.5" text-anchor="middle" class="fig-tiny">m</text>
+                    <text x="240" y="164" text-anchor="middle" class="fig-sub">k, b, m</text>
+                  </g>
+
+                  <!-- 3: bank of Kalman filters + posterior -->
+                  <g class="fig-ink">
+                    <rect x="354" y="72" width="70" height="24" rx="5" opacity=".45" />
+                    <rect x="362" y="80" width="70" height="24" rx="5" opacity=".7" />
+                    <rect x="370" y="88" width="70" height="24" rx="5" class="fig-fill-soft" />
+                    <text x="405" y="104.5" text-anchor="middle" class="fig-tiny">KF(λₖ)</text>
+                    <line x1="354" y1="166" x2="444" y2="166" opacity=".5" />
+                    <path class="fig-accent" d="M356 166 C378 166 386 124 398 124 C410 124 418 166 442 166" />
+                    <line x1="398" y1="124" x2="398" y2="166" stroke-dasharray="3 3" />
+                  </g>
+
+                  <!-- labels -->
+                  <g class="fig-label">
+                    <text x="82" y="208" text-anchor="middle">Capture motion</text>
+                    <text x="240" y="208" text-anchor="middle">Physics model</text>
+                    <text x="398" y="208" text-anchor="middle">Bayesian inference</text>
+                  </g>
+                  <g class="fig-sub">
+                    <text x="82" y="226" text-anchor="middle">video → time series</text>
+                    <text x="240" y="226" text-anchor="middle">S(λ) = {A, B, H, Q, R}</text>
+                    <text x="398" y="226" text-anchor="middle">MMAE → λ̂</text>
+                  </g>
                 </svg>
-                <span>IEEE CASE 2025</span>
-              </div>
+              </figure>
             </div>
             <div class="pub-details">
               <h3 class="pub-title">Computer Vision Informed Parameter Estimation</h3>
               <p class="pub-authors">M. Hernandez, <strong>B. T. Elberier</strong>, A. Mehta</p>
-              <p class="pub-venue"><em>IEEE International Conference on Automation Science and Engineering (CASE)</em>, 2025.</p>
+              <p class="pub-venue"><em>IEEE International Conference on Automation Science and Engineering (CASE)</em>, 2025, pp. 3494–3499.</p>
+              <p class="pub-highlight">Estimates the parameters of a linear dynamic system directly from video, reaching 3.96% MAPE on data subject to additive white Gaussian noise.</p>
               <p class="pub-links">
-                <a href="https://doi.org/10.1109/CASE58245.2025.11163858" target="_blank" rel="noopener">DOI</a>
+                <a href="https://doi.org/10.1109/CASE58245.2025.11163858" target="_blank" rel="noopener">DOI</a> ·
+                <a href="https://ieeexplore.ieee.org/abstract/document/11163858" target="_blank" rel="noopener">IEEE Xplore</a> ·
+                <a href="https://github.com/astronandez/CV-Informed-Parameter-Estimation" target="_blank" rel="noopener">Code</a> ·
+                <a href="https://www.youtube.com/watch?v=vDAe3BtsiM0" target="_blank" rel="noopener">Talk video</a>
               </p>
             </div>
-            <div class="pub-media-right"></div>
+            <div class="pub-media-right">
+              <video
+                class="pub-video pub-loop"
+                src="assets/video/cvipe-tracking.mp4"
+                poster="assets/img/cvipe-tracking.jpg"
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-label="Computer-vision tracking of an SUV's wheel and body as it drives past"
+              ></video>
+            </div>
+            <details class="abstract">
+              <summary>Abstract</summary>
+              <p>
+                The proposed computer vision (CV) informed parameter estimation pipeline is capable of generating
+                parameter estimates for a selected linear dynamic system. This is accomplished by (1) collecting a
+                time-series dataset of a system's physical motion, (2) relating the captured motion to a designed
+                physics-based model, and (3) estimating the most probable set of parameters that represents the
+                observed motion using Bayesian inference. This analysis provides a fundamental understanding of the
+                system's intrinsic properties that enables the refinement and generation of new system affordances.
+                Leveraging this additional knowledge, external learning systems may use this physics-based approach
+                to make predictions of a system's potential environmental interactions. We compare the results of our
+                generalized approach with those of a handcrafted solution designed for a similarly constructed
+                experiment. Our experiments reveal a MAPE of 3.962%, highlighting the approach's robustness given a
+                time-series dataset subject to additive white Gaussian noise (AWGN).
+              </p>
+            </details>
           </article>
 
           <!-- Science Robotics 2023 -->
-          <article class="pub-feature reveal">
+          <article class="pub-feature reveal" id="pub-microfliers">
             <div class="pub-media-left">
-              <img
+              <img decoding="async"
                 class="pub-thumb"
                 src="assets/img/microflier-flight.jpg"
                 alt="Time-lapse of an origami microflier changing shape as it falls"
@@ -359,11 +549,70 @@
                 rel="noopener"
                 aria-label="Play video: Battery-free origami microfliers take flight"
               >
-                <img src="assets/img/microflier-video.jpg" alt="" loading="lazy" />
+                <img decoding="async" src="assets/img/microflier-video.jpg" alt="" loading="lazy" />
                 <span class="yt-play" aria-hidden="true">
                   <svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"/><path d="M45 24L27 14v20z" fill="#fff"/></svg>
                 </span>
               </a>
+            </div>
+            <details class="abstract">
+              <summary>Abstract</summary>
+              <p>
+                Using wind to disperse microfliers that fall like seeds and leaves can help automate large-scale
+                sensor deployments. Here, we present battery-free microfliers that can change shape in mid-air to
+                vary their dispersal distance. We designed origami microfliers using bistable leaf-out structures and
+                uncovered an important property: a simple change in the shape of these origami structures causes two
+                dramatically different falling behaviors. When unfolded and flat, the microfliers exhibit a tumbling
+                behavior that increases lateral displacement in the wind. When folded inward, their orientation is
+                stabilized, resulting in a downward descent that is less influenced by wind. To electronically
+                transition between these two shapes, we designed a low-power electromagnetic actuator that produces
+                peak forces of up to 200 millinewtons within 25 milliseconds while powered by solar cells. We
+                fabricated a circuit directly on the folded origami structure that includes a programmable
+                microcontroller, a Bluetooth radio, a solar power–harvesting circuit, a pressure sensor to estimate
+                altitude, and a temperature sensor. Outdoor evaluations show that our 414-milligram origami
+                microfliers were able to electronically change their shape mid-air, travel up to 98 meters in a light
+                breeze, and wirelessly transmit data via Bluetooth up to 60 meters away, using only power collected
+                from the sun.
+              </p>
+            </details>
+          </article>
+
+          <h3 class="pub-subhead reveal">Posters &amp; Presentations</h3>
+
+          <!-- UW Reality Lab poster 2022 -->
+          <article class="pub-feature reveal" id="pub-octopus">
+            <div class="pub-media-left">
+              <a class="poster-link" href="assets/files/octopus-vr-poster-2022.pdf" target="_blank" rel="noopener" aria-label="Open the poster (PDF)">
+                <img decoding="async"
+                  class="pub-thumb poster-thumb"
+                  src="assets/img/octopus-poster.jpg"
+                  alt="Poster: Using VR to Model and Control a Realistic Octopus Experience"
+                  loading="lazy"
+                />
+              </a>
+            </div>
+            <div class="pub-details">
+              <h3 class="pub-title">Using VR to Model &amp; Control a Realistic Octopus Experience</h3>
+              <p class="pub-authors">M. Kumar, H. Tran, R. Crist, <strong>T. Elberier</strong></p>
+              <p class="pub-venue">Poster · Octopus Research Group, UW Reality Lab, 2022.</p>
+              <p class="pub-links">
+                <a href="assets/files/octopus-vr-poster-2022.pdf" target="_blank" rel="noopener">Poster (PDF)</a> ·
+                <a href="https://arl.cs.washington.edu/ORG/presentations/education_soiree_2022.mp4" target="_blank" rel="noopener">Talk (6 min)</a> ·
+                <a href="https://arl.cs.washington.edu/ORG/index.html" target="_blank" rel="noopener">Project</a>
+              </p>
+              <p class="pub-press">Presented at Education Soiree 2022: “Technologies in Search of a Purpose.”</p>
+            </div>
+            <div class="pub-media-right">
+              <video
+                class="pub-video pub-loop"
+                src="assets/video/octopus-vr-demo.mp4"
+                poster="assets/img/octopus-vr-demo.jpg"
+                muted
+                loop
+                playsinline
+                preload="none"
+                aria-label="Demo: a participant in a VR headset controls the octopus's arms, shown in first- and third-person views"
+              ></video>
             </div>
           </article>
         </div>
@@ -378,56 +627,48 @@
           <ol class="journey" data-scrub="through">
             <li class="milestone reveal">
               <span class="m-year">2025</span>
-              <div class="m-card">
+              <div class="m-card has-logo">
+                <img decoding="async" class="m-logo" src="assets/img/logos/ucla.svg" alt="UCLA" loading="lazy" />
                 <h3>Began the Ph.D. at UCLA</h3>
-                <p>Completed my M.S. and presented computer-vision-informed parameter estimation at IEEE CASE.</p>
+                <p>Completed the M.S. and published computer-vision-informed parameter estimation at IEEE CASE.</p>
               </div>
             </li>
             <li class="milestone reveal">
               <span class="m-year">2024</span>
-              <div class="m-card">
+              <div class="m-card has-logo">
+                <img decoding="async" class="m-logo" src="assets/img/logos/mitll.png" alt="MIT Lincoln Laboratory" loading="lazy" />
                 <h3>GEM Fellow at MIT Lincoln Laboratory</h3>
-                <p>Built a real-time thermal detection and UAV guidance stack across two research appointments.</p>
+                <p>Developed real-time vision, tracking, and guidance systems across two research appointments; featured in the Lab's <a href="#featured">2024 Intern Spotlight</a>.</p>
               </div>
             </li>
             <li class="milestone reveal">
               <span class="m-year">2023</span>
-              <div class="m-card">
+              <div class="m-card has-logo">
+                <img decoding="async" class="m-logo" src="assets/img/logos/ucla.svg" alt="UCLA" loading="lazy" />
                 <h3>Joined the LEMUR Lab · <em>Science Robotics</em></h3>
-                <p>Started graduate research with Ankur Mehta; our origami microfliers were published in <em>Science Robotics</em>.</p>
+                <p>Began graduate research with Ankur Mehta on low-power autonomous microrobots. Origami microfliers published in <em>Science Robotics</em>.</p>
               </div>
             </li>
             <li class="milestone reveal">
               <span class="m-year">2022</span>
-              <div class="m-card">
+              <div class="m-card has-logo">
+                <img decoding="async" class="m-logo" src="assets/img/logos/amd.svg" alt="AMD" loading="lazy" />
                 <h3>Silicon Design Engineer at AMD</h3>
-                <p>Bridged silicon design with firmware, verification, and SoC teams on client products.</p>
-              </div>
-            </li>
-            <li class="milestone reveal">
-              <span class="m-year">2022</span>
-              <div class="m-card">
-                <h3>NASA Space Grant · B.S. from UW</h3>
-                <p>Designed HMAC-based secure uplink/downlink messaging for the UW CubeSat team's SOC-I satellite.</p>
+                <p>Worked across silicon design, firmware, verification, and SoC teams on client products.</p>
               </div>
             </li>
             <li class="milestone reveal">
               <span class="m-year">2021</span>
-              <div class="m-card">
+              <div class="m-card has-logo">
+                <img decoding="async" class="m-logo" src="assets/img/logos/uw.svg" alt="University of Washington" loading="lazy" />
                 <h3>First research: Iyer Lab &amp; Reality Lab</h3>
-                <p>Began building battery-free origami microfliers and a VR system for cross-species embodiment.</p>
-              </div>
-            </li>
-            <li class="milestone reveal">
-              <span class="m-year">2020–21</span>
-              <div class="m-card">
-                <h3>Engineering internships</h3>
-                <p>Low-power custom circuits at Dialog Semiconductor and an iOS app at FishTail Design Automation.</p>
+                <p>Built firmware for battery-free origami microfliers and contributed to a VR system for cross-species embodiment.</p>
               </div>
             </li>
             <li class="milestone reveal">
               <span class="m-year">2017</span>
-              <div class="m-card">
+              <div class="m-card has-logo">
+                <img decoding="async" class="m-logo" src="assets/img/logos/uw.svg" alt="University of Washington" loading="lazy" />
                 <h3>Started ECE at the University of Washington</h3>
                 <p>Concentrations in embedded computing systems and digital VLSI.</p>
               </div>
@@ -436,11 +677,39 @@
         </div>
       </section>
 
+      <!-- ============ FEATURED ============ -->
+      <section class="section featured" id="featured">
+        <div class="container featured-grid">
+          <figure class="featured-media reveal">
+            <img decoding="async"
+              src="assets/img/mitll-spotlight.jpg"
+              alt="Brair (Tilboon) Elberier working at a motion platform in a lab at MIT Lincoln Laboratory"
+              loading="lazy"
+            />
+            <figcaption>Photo: MIT Lincoln Laboratory</figcaption>
+          </figure>
+          <div class="featured-copy">
+            <p class="kicker reveal">Featured</p>
+            <h2 class="display reveal">Intern Spotlight</h2>
+            <p class="featured-source reveal">MIT Lincoln Laboratory · <em>2024 Community Involvement Report</em>, p. 63</p>
+            <blockquote class="pull-quote reveal">
+              <p>
+                “The unique culture here blends academic rigor with a genuine openness to diverse perspectives to
+                attack problems in novel ways.”
+              </p>
+            </blockquote>
+            <p class="reveal">
+              <a class="pill" href="https://www.ll.mit.edu/sites/default/files/publication/doc/2025-06/2024_Community_Involvement_Report_Web_Updated_06172025.pdf#page=33" target="_blank" rel="noopener">Read the spotlight (PDF)</a>
+            </p>
+          </div>
+        </div>
+      </section>
+
       <!-- ============ TEACHING & HONORS ============ -->
-      <section class="section" id="teaching">
+      <section class="section alt" id="teaching">
         <div class="container">
           <p class="kicker reveal">Teaching &amp; Mentorship</p>
-          <h2 class="display reveal">Passing it forward.</h2>
+          <h2 class="display reveal">Teaching the next engineers.</h2>
 
           <div class="columns">
             <div class="card reveal">
@@ -485,7 +754,7 @@
           <p class="kicker reveal">Contact</p>
           <h2 class="display reveal">Let's talk research.</h2>
           <p class="contact-lede reveal">
-            I'm always happy to talk about microrobotics, embedded systems, and collaborations.
+            I'm glad to discuss near-gram robotics, embedded perception, and potential collaborations.
           </p>
           <p class="reveal">
             <a class="pill solid big" href="mailto:tilboon@g.ucla.edu">tilboon@g.ucla.edu</a>

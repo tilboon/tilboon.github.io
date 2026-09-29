@@ -35,12 +35,18 @@ if (MOTION) {
   });
 }
 
-// Feature stats count up with scroll progress (scrubbed, so scrolling back counts down)
-const counters = Array.from(document.querySelectorAll("[data-count]"));
-function setCounters(t) {
-  const eased = 1 - Math.pow(1 - clamp(t), 3);
-  counters.forEach((el) => {
-    el.textContent = String(Math.round(Number(el.dataset.count) * eased));
+// Stats count up with their section's scroll progress (scrubbed, so scrolling back counts down).
+// A section can set data-count-from / data-count-span to choose when in its progress the count runs.
+const counters = Array.from(document.querySelectorAll("[data-count]")).map((el) => ({
+  el,
+  scene: el.closest("[data-scrub]"),
+}));
+function setCounters(scene, p) {
+  const from = Number(scene.dataset.countFrom ?? 0.5);
+  const span = Number(scene.dataset.countSpan ?? 0.3);
+  const eased = 1 - Math.pow(1 - clamp((p - from) / span), 3);
+  counters.forEach(({ el, scene: s }) => {
+    if (s === scene) el.textContent = String(Math.round(Number(el.dataset.count) * eased));
   });
 }
 
@@ -51,15 +57,18 @@ function setCounters(t) {
 //     pin     — progress through a tall section whose stage is sticky
 //     through — how far the viewport's reading line has travelled down the element
 //   .reveal elements get .in once they enter the viewport (siblings stagger)
-//   the research .step nearest the middle of the screen picks the visual
 (function () {
   const scrubs = MOTION ? Array.from(document.querySelectorAll("[data-scrub]")) : [];
   let pending = MOTION ? Array.from(document.querySelectorAll(".reveal")) : [];
+  const hero = document.querySelector(".hero");
+  const features = Array.from(document.querySelectorAll(".feature"));
+  // Research slider: the step nearest the middle of the screen picks the pinned visual
   const steps = Array.from(document.querySelectorAll(".step"));
   const visuals = Array.from(document.querySelectorAll(".story-visual"));
-  const hero = document.querySelector(".hero");
-  const feature = document.getElementById("feature");
   let activeStep = "0";
+  // Looping clips only play while on screen (and, in the slider, while their step is active)
+  const loops = Array.from(document.querySelectorAll("video.pub-loop, .feature-media video, .story-visual video"));
+  if (!MOTION) loops.forEach((v) => (v.controls = true));
   let ticking = false;
 
   pending.forEach((el) => {
@@ -76,19 +85,27 @@ function setCounters(t) {
     const scrubRects = scrubs.map((el) => el.getBoundingClientRect());
     const revealed = pending.filter((el) => el.getBoundingClientRect().top < vh * 0.9);
 
+    const scrolled = hero ? window.scrollY > hero.offsetHeight * 0.65 : true;
+
     let nextStep = activeStep;
     let best = Infinity;
-    for (const s of steps) {
-      const r = s.getBoundingClientRect();
+    for (const st of steps) {
+      const r = st.getBoundingClientRect();
       const d = Math.abs(r.top + r.height / 2 - vh / 2);
       if (d < best) {
         best = d;
-        nextStep = s.dataset.step;
+        nextStep = st.dataset.step;
       }
     }
-    const scrolled = hero ? window.scrollY > hero.offsetHeight * 0.65 : true;
-    const fr = feature ? feature.getBoundingClientRect() : null;
-    const overDark = !!fr && fr.top <= 0 && fr.bottom > 56;
+
+    const overDark = features.some((f) => {
+      const r = f.getBoundingClientRect();
+      return r.top <= 0 && r.bottom > 56;
+    });
+    const loopVisible = loops.map((v) => {
+      const r = v.getBoundingClientRect();
+      return r.bottom > 0 && r.top < vh;
+    });
 
     // --- write ---
     scrubs.forEach((el, i) => {
@@ -101,7 +118,8 @@ function setCounters(t) {
           p = clamp(-r.top / r.height);
           break;
         case "pin":
-          p = clamp(-r.top / (r.height - vh));
+          // Unpinned (phones / reduced motion): fall back to scroll-through progress
+          p = r.height - vh > 1 ? clamp(-r.top / (r.height - vh)) : clamp((vh * 0.9 - r.top) / (vh * 0.8));
           break;
         default:
           p = clamp((vh * 0.6 - r.top) / r.height);
@@ -112,7 +130,7 @@ function setCounters(t) {
         const lit = Math.round(clamp((p - 0.08) / 0.72) * words.length);
         words.forEach((w, j) => w.classList.toggle("lit", j < lit));
       }
-      if (el.id === "feature") setCounters((p - 0.5) / 0.3);
+      if (el.querySelector("[data-count]")) setCounters(el, p);
     });
 
     if (revealed.length) {
@@ -120,10 +138,21 @@ function setCounters(t) {
       pending = pending.filter((el) => !el.classList.contains("in"));
     }
 
+
+
     if (nextStep !== activeStep) {
       activeStep = nextStep;
-      steps.forEach((s) => s.classList.toggle("is-active", s.dataset.step === activeStep));
+      steps.forEach((st) => st.classList.toggle("is-active", st.dataset.step === activeStep));
       visuals.forEach((v) => v.classList.toggle("is-active", v.dataset.step === activeStep));
+    }
+
+    if (MOTION) {
+      loops.forEach((v, i) => {
+        const visual = v.closest(".story-visual");
+        const shouldPlay = loopVisible[i] && (!visual || visual.dataset.step === activeStep);
+        if (shouldPlay && v.paused) v.play().catch(() => {});
+        else if (!shouldPlay && !v.paused) v.pause();
+      });
     }
 
     document.body.classList.toggle("scrolled", scrolled);

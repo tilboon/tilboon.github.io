@@ -1,0 +1,7 @@
+# Source media kept locally; the site uses compressed copies
+assets/video/*.mov
+assets/video/suv_threepass_cv.mp4
+assets/img/platform.png
+
+# macOS
+.DS_Store

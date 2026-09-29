@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#3a8bd0"/>
+      <stop offset="1" stop-color="#0b3a63"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="15" fill="url(#g)"/>
+  <!-- B -->
+  <path fill="#fff" fill-rule="evenodd" d="M11 15H22a7 7 0 0 1 0 14h1a8 8 0 0 1 0 16H11Z M16.5 20.5H22a2.875 2.875 0 0 1 0 5.75H16.5Z M16.5 31.75H23a3.875 3.875 0 0 1 0 7.75H16.5Z"/>
+  <!-- E -->
+  <path fill="#fff" d="M36 15h16v5.5H41.5v4.75h9v5.5h-9v8.75H52V45H36Z"/>
+  <!-- gold accent, as under the site's headings -->
+  <rect x="11" y="50" width="16" height="4" rx="2" fill="#ffb81c"/>
+</svg>
