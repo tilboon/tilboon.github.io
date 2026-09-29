@@ -245,3 +245,27 @@ function setCounters(scene, p) {
     });
   });
 })();
+
+// Light/dark toggle: remembers the choice; without one, the system setting applies
+(function () {
+  const btn = document.getElementById("theme-toggle");
+  if (!btn) return;
+  const root = document.documentElement;
+  const systemDark = window.matchMedia("(prefers-color-scheme: dark)");
+  const current = () => root.getAttribute("data-theme") || (systemDark.matches ? "dark" : "light");
+
+  function label() {
+    btn.setAttribute("aria-label", current() === "dark" ? "Switch to light mode" : "Switch to dark mode");
+  }
+
+  btn.addEventListener("click", () => {
+    const next = current() === "dark" ? "light" : "dark";
+    root.setAttribute("data-theme", next);
+    try {
+      localStorage.setItem("theme", next);
+    } catch (e) {}
+    label();
+  });
+  systemDark.addEventListener("change", label);
+  label();
+})();
