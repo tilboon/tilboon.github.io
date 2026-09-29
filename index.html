@@ -1,322 +1,503 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Brair 'Tilboon' Elberier — Academic Homepage</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Brair (Tilboon) Elberier — Microrobotics Research</title>
     <meta
       name="description"
-      content="Brair (Tilboon) Elberier — robotics, embedded systems, low-power autonomous microrobots."
+      content="Brair (Tilboon) Elberier — UCLA ECE Ph.D. student in the LEMUR Lab building low-power, battery-free autonomous microrobots."
     />
+    <meta name="color-scheme" content="light dark" />
 
-    <!-- fonts -->
+    <!-- Link previews (LinkedIn, Slack, email, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Brair (Tilboon) Elberier" />
+    <meta property="og:description" content="UCLA ECE Ph.D. student building low-power, battery-free autonomous microrobots." />
+    <meta property="og:image" content="https://tilboon.github.io/assets/og-image.jpg" />
+    <meta property="og:url" content="https://tilboon.github.io/" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Turn on motion before first paint so reveal elements don't flash -->
+    <script>
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        document.documentElement.classList.add("motion");
+      }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&family=Roboto+Slab:wght@400;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap"
       rel="stylesheet"
     />
-
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
 
-    <header class="site-header" role="banner">
-      <!-- Hamburger (mobile only) -->
-      <button
-        class="nav-toggle"
-        id="nav-toggle"
-        type="button"
-        aria-controls="nav-primary"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <!-- Hamburger icon -->
-        <svg class="icon-ham" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M3 6h18M3 12h18M3 18h18"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            fill="none"
-          />
-        </svg>
-        <!-- Close icon -->
-        <svg class="icon-close" width="26" height="26" viewBox="0 0 24 24" aria-hidden="true">
-          <path
-            d="M6 6l12 12M18 6l-12 12"
-            stroke="currentColor"
-            stroke-width="2"
-            stroke-linecap="round"
-            fill="none"
-          />
-        </svg>
-      </button>
+    <!-- Slim global nav; slides in once you scroll past the hero -->
+    <header class="site-header" id="site-header">
+      <div class="container nav-bar">
+        <a class="brand" href="#top">Brair Elberier</a>
 
-      <div class="container header-grid">
-        <div class="header-left">
-          <img
-            class="avatar"
-            src="assets/profile.jpg"
-            srcset="assets/profile.jpg 1x, assets/profile@2x.jpg 2x"
-            alt="Portrait of Brair Tilboon Elberier"
-            width="200"
-            height="200"
-            loading="lazy"
-          />
-        </div>
+        <button
+          class="nav-toggle"
+          id="nav-toggle"
+          type="button"
+          aria-controls="nav-primary"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <svg class="icon-ham" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M3 7h18M3 12h18M3 17h18" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+          </svg>
+          <svg class="icon-close" width="22" height="22" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 6l12 12M18 6l-12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none" />
+          </svg>
+        </button>
 
-        <div class="header-right">
-          <h1 class="site-title">Brair 'Tilboon' Elberier</h1>
-          <p class="lede">
-            Ph.D. Student, Electrical &amp; Computer Engineering · Robotics
-          </p>
-          <p class="lede">Samueli School of Engineering, University of California, Los Angeles (UCLA)</p>
-          <p class="lede">Graduate Research Assistant · LEMUR Lab (Advisor: Ankur Mehta)</p>
-
-          <p class="meta">
-            <a href="https://scholar.google.com/citations?user=KkppI1QAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a> ·
-            <a href="https://www.linkedin.com/in/tilboon" target="_blank" rel="noreferrer">LinkedIn</a> ·
-            <a href="assets/cv.pdf" target="_blank" rel="noreferrer">CV</a> ·
-            <a href="https://www.youtube.com/channel/UCPlnun2boPcohBWyB3QoJ5A?app=desktop" target="_blank" rel="noreferrer">YouTube</a> ·
-            <a href="https://github.com/tilboon" target="_blank" rel="noreferrer">GitHub</a>
-          </p>
-
-          <!-- Primary nav -->
-          <nav class="nav" id="nav-primary" aria-label="Primary">
-            <ul>
-              <li><a href="#updates">Updates</a></li>
-              <li><a href="#about">About</a></li>
-              <li><a href="#research">Research</a></li>
-              <li><a href="#publications">Publications</a></li>
-              <li><a href="#teaching">Teaching</a></li>
-              <li><a href="#skills">Skills</a></li>
-              <li><a href="#site-footer">Contact</a></li>
-            </ul>
-          </nav>
-        </div>
+        <nav class="nav" id="nav-primary" aria-label="Primary">
+          <ul>
+            <li><a href="#research">Research</a></li>
+            <li><a href="#publications">Publications</a></li>
+            <li><a href="#journey">Journey</a></li>
+            <li><a href="#teaching">Teaching</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a class="nav-cv" href="assets/cv.pdf" target="_blank" rel="noopener">CV</a></li>
+          </ul>
+        </nav>
       </div>
     </header>
 
     <main id="main">
-      <!-- Updates -->
-      <section id="updates" class="section">
-        <div class="container">
-          <h2>Updates</h2>
-
-          <ul class="updates">
-            <li class="update">
-              <div class="update-meta">May 2024 · Fellowship</div>
-              <div class="update-title">National GEM Consortium Fellow</div>
-              <div class="update-actions"><a href="#" target="_blank" rel="noreferrer">Details</a></div>
-            </li>
-
-            <li class="update">
-              <div class="update-meta">June 2022 · Grant</div>
-              <div class="update-title">NASA Space Grant Recipient (UW CubeSat SOC-I)</div>
-              <div class="update-actions"><a href="#" target="_blank" rel="noreferrer">Project</a></div>
-            </li>
-
-            <li class="update">
-              <div class="update-meta">August 2021 · Scholarship</div>
-              <div class="update-title">Boeing Emerging Leader Scholarship (UW College of Engineering)</div>
-              <div class="update-actions"><a href="#" target="_blank" rel="noreferrer">Announcement</a></div>
-            </li>
-          </ul>
+      <!-- ============ HERO ============ -->
+      <section class="hero" id="top" data-scrub="hero">
+        <div class="hero-glow" aria-hidden="true">
+          <span class="blob b1"></span>
+          <span class="blob b2"></span>
+          <span class="blob b3"></span>
         </div>
+
+        <div class="hero-inner container">
+          <img
+            class="hero-portrait"
+            src="assets/profile-400.jpg"
+            srcset="assets/profile-400.jpg 400w, assets/profile-800.jpg 800w"
+            sizes="168px"
+            alt="Brair (Tilboon) Elberier"
+            width="168"
+            height="168"
+          />
+          <p class="eyebrow">Ph.D. Student · UCLA Electrical &amp; Computer Engineering · LEMUR Lab</p>
+          <h1 class="hero-title">Brair (Tilboon) Elberier</h1>
+          <p class="hero-tagline">
+            I build tiny, battery-free robots that sense, move, and communicate on their own.
+          </p>
+
+          <p class="hero-links">
+            <a class="pill solid" href="#research">Explore my research</a>
+            <a class="pill" href="https://scholar.google.com/citations?user=KkppI1QAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+            <a class="pill" href="https://www.linkedin.com/in/tilboon" target="_blank" rel="noopener">LinkedIn</a>
+            <a class="pill" href="https://github.com/tilboon" target="_blank" rel="noopener">GitHub</a>
+            <a class="pill" href="assets/cv.pdf" target="_blank" rel="noopener">CV</a>
+          </p>
+
+          <a class="latest" href="#publications">
+            <span class="latest-tag">New</span>
+            <span>Computer Vision Informed Parameter Estimation — IEEE CASE 2025</span>
+          </a>
+        </div>
+
+        <a class="scroll-cue" href="#vision" aria-label="Scroll to learn more">
+          <span></span>
+        </a>
       </section>
 
-      <!-- About -->
-      <section id="about" class="section">
-        <div class="container">
-          <h2>Biography</h2>
-
-          <p>
-            I’m a Ph.D. student in Electrical &amp; Computer Engineering at UCLA (GPA 3.9), focused on
-            low-power autonomous robotics and embedded systems. My work spans microrobot autonomy, swarm
-            navigation, on-device sensing, and robust control/estimation for resource-constrained platforms.
-          </p>
-
-          <p>
-            I’m a Graduate Research Assistant in the LEMUR Lab (Advisor: Ankur Mehta), working on
-            hardware/software co-design for small-scale, battery-free robots, including state estimation
-            (e.g., Kalman filtering) and communication/control algorithms for swarm navigation.
-          </p>
-
-          <h3>Education</h3>
-          <ul class="bullets">
-            <li><strong>Ph.D., Electrical &amp; Computer Engineering</strong>, UCLA (Sep 2025 – Jun 2029), GPA 3.9</li>
-            <li><strong>M.S., Electrical &amp; Computer Engineering</strong>, UCLA (Sep 2023 – Jun 2025), GPA 3.9</li>
-            <li><strong>B.S., Electrical &amp; Computer Engineering</strong>, University of Washington (Sep 2017 – Jun 2022), Major GPA 3.64</li>
-          </ul>
-
-          <p class="meta" style="margin-top: 10px">
-            <a href="assets/cv.pdf" target="_blank" rel="noreferrer">Full CV (PDF)</a>
-          </p>
-        </div>
-      </section>
-
-      <!-- Research -->
-      <section id="research" class="section alt">
-        <div class="container">
-          <h2>Research &amp; Experience</h2>
-
-          <div class="grid-2">
-            <article class="card">
-              <h3 class="h4">LEMUR Lab (UCLA) — Battery-free autonomy &amp; swarm navigation</h3>
-              <p class="muted">
-                Hardware/software development for low-power, small-scale, battery-free autonomous robots. Includes
-                estimation-driven control (Kalman filtering) and communication/control algorithms for swarm navigation.
-              </p>
-              <p class="meta">
-                <a href="#" target="_blank" rel="noreferrer">Lab</a> ·
-                <a href="#" target="_blank" rel="noreferrer">Project page</a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3 class="h4">MIT Lincoln Laboratory — Thermal detection &amp; closed-loop UAV guidance</h3>
-              <p class="muted">
-                Built an end-to-end vision/control stack for real-time thermal detection and autonomous UAV guidance.
-                Partnered with ModalAI to extend platform capabilities and transitioned the system to ARL.
-              </p>
-              <p class="meta">
-                <a href="#" target="_blank" rel="noreferrer">Overview</a> ·
-                <a href="#" target="_blank" rel="noreferrer">Demo</a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3 class="h4">Iyer Lab (UW) — Battery-free origami gliding sensor nodes</h3>
-              <p class="muted">
-                Designed embedded, battery-free wireless gliding sensor nodes with origami body triggered by wireless
-                actuators; implemented low-power wireless data collection on Nordic nRF52 platforms.
-              </p>
-              <p class="meta">
-                <a href="#" target="_blank" rel="noreferrer">Project</a> ·
-                <a href="#publications">Related publication</a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3 class="h4">Reality Lab (UW) — VR interaction research (Unity)</h3>
-              <p class="muted">
-                Developed a VR system to study human interaction with alternate species (Giant Pacific Octopus),
-                including data collection and physics-based mapping of human motion to a simulated model using Unity.
-              </p>
-              <p class="meta">
-                <a href="#" target="_blank" rel="noreferrer">Video</a>
-              </p>
-            </article>
-
-            <article class="card">
-              <h3 class="h4">UW CubeSat SOC-I — Secure communications (NASA Space Grant)</h3>
-              <p class="muted">
-                Built message encryption/validation via HMAC and configured data packet/protocol setup for uplink and
-                downlink communications.
-              </p>
-              <p class="meta">
-                <a href="#" target="_blank" rel="noreferrer">Mission</a>
-              </p>
-            </article>
+      <!-- ============ VISION: words light up as you scroll ============ -->
+      <section class="pin vision" id="vision" data-scrub="pin">
+        <div class="pin-inner">
+          <div class="container">
+            <p class="kicker">Research vision</p>
+            <p class="statement" data-words>
+              Tiny robots. No batteries. No tethers. My goal is to build microrobots that are
+              completely self-sufficient, and to challenge what we assume they can do in the real,
+              unstructured world.
+            </p>
           </div>
         </div>
       </section>
 
-      <!-- Publications -->
-      <section id="publications" class="section">
-        <div class="container">
-          <div class="section-heading">
-            <h2>Selected Publications</h2>
-            <p class="actions">
-              <a class="button" href="https://scholar.google.com/citations?user=KkppI1QAAAAJ&hl=en" target="_blank" rel="noreferrer">Google Scholar</a>
+      <!-- ============ ABOUT ============ -->
+      <section class="section" id="about">
+        <div class="container about-grid">
+          <div class="bio">
+            <h2 class="reveal">About</h2>
+            <p class="reveal">
+              I am a Ph.D. student in Electrical and Computer Engineering at UCLA, advised by
+              <a href="https://uclalemur.com/" target="_blank" rel="noopener">Ankur Mehta</a> in the Laboratory
+              for Embedded Machines and Ubiquitous Robots (LEMUR). I am also a National GEM Consortium Fellow and a
+              graduate researcher at MIT Lincoln Laboratory.
+            </p>
+            <p class="reveal">
+              My research develops hardware and software for low-power, autonomous microrobots built for
+              resource-constrained settings: battery-free onboard actuation, wireless communication, remote
+              sensing, computer vision, and state estimation. My work has appeared in <em>Science Robotics</em>
+              and IEEE CASE.
+            </p>
+            <p class="reveal">
+              I earned my B.S. in Electrical and Computer Engineering from the University of Washington, where I
+              built battery-free origami microfliers in
+              <a href="https://homes.cs.washington.edu/~vsiyer/" target="_blank" rel="noopener">Vikram Iyer</a>'s lab
+              and designed the secure communication protocol for the UW CubeSat team's SOC-I satellite as a NASA
+              Space Grant recipient. I care deeply about teaching, and have taught embedded systems and Python to
+              high school students through AVELA.
             </p>
           </div>
 
-          <article class="pub">
-            <div class="pub-details">
-              <h3 class="pub-title">Computer Vision Informed Parameter Estimation</h3>
-              <p class="pub-authors">Elberier B., Hernandez M., Mehta A.</p>
-              <p class="pub-venue"><em>IEEE CASE</em>, 2025.</p>
-              <p class="pub-links">
-                <a href="#" target="_blank" rel="noreferrer">PDF</a> ·
-                <a href="#" target="_blank" rel="noreferrer">DOI</a>
-              </p>
-            </div>
-          </article>
+          <aside class="glance reveal" aria-label="At a glance">
+            <h3 class="glance-title">Research Interests</h3>
+            <ul class="chips">
+              <li>Microrobotics</li>
+              <li>Battery-free systems</li>
+              <li>Embedded systems</li>
+              <li>Computer vision</li>
+              <li>State estimation</li>
+              <li>Swarm robotics</li>
+              <li>Low-power wireless</li>
+            </ul>
 
-          <article class="pub">
-            <div class="pub-details">
-              <h3 class="pub-title">Autonomous Battery-free Origami Robots for Aerial Sensor Deployment</h3>
-              <p class="pub-authors">Johnson K., Arroyos V., Elberier T., Fuller S., Iyer V., Gollakota S.</p>
-              <p class="pub-venue"><em>Science Robotics</em>, 2023.</p>
-              <p class="pub-links">
-                <a href="#" target="_blank" rel="noreferrer">PDF</a> ·
-                <a href="#" target="_blank" rel="noreferrer">DOI</a> ·
-                <a href="#" target="_blank" rel="noreferrer">Code</a>
-              </p>
-            </div>
-          </article>
-
-          <p class="meta" style="margin-top: 14px">
-            See CV for full publication list and details.
-          </p>
+            <h3 class="glance-title">Education</h3>
+            <ul class="edu">
+              <li><strong>Ph.D., Electrical &amp; Computer Engineering</strong><span>UCLA · 2025–present</span></li>
+              <li><strong>M.S., Electrical &amp; Computer Engineering</strong><span>UCLA · 2025</span></li>
+              <li><strong>B.S., Electrical &amp; Computer Engineering</strong><span>University of Washington · 2022</span></li>
+            </ul>
+          </aside>
         </div>
       </section>
 
-      <!-- Teaching -->
-      <section id="teaching" class="section alt">
+      <!-- ============ RESEARCH: sticky visual + scrolling steps ============ -->
+      <section class="section research" id="research">
         <div class="container">
-          <h2>Teaching &amp; Mentorship</h2>
-
-          <h3>Teaching Assistant / Instructor</h3>
-          <ul class="bullets">
-            <li>UCLA ECE — Systems Design Capstone (ECE180DA/DW)</li>
-            <li>UW Allen School — Design of Digital Circuits &amp; Systems (CSE371); Introduction to Digital Design (CSE369)</li>
-            <li>UW ECE — Advanced Technical Communications (EE393); The University Community (GENST199)</li>
-            <li>Seattle Public Schools — AVELA course instructor (Intro Embedded Systems; Intermediate Python)</li>
-          </ul>
-
-          <h3 style="margin-top: 16px">Selected Awards</h3>
-          <ul class="bullets">
-            <li>National GEM Consortium Fellowship (2024)</li>
-            <li>NASA Space Grant Recipient (2022)</li>
-            <li>Boeing Emerging Leader Scholarship (2021)</li>
-            <li>NACME Corporate Scholarship (2021)</li>
-          </ul>
+          <p class="kicker reveal">Research</p>
+          <h2 class="display reveal">Autonomy at the smallest scales.</h2>
         </div>
-      </section>
 
-      <!-- Skills -->
-      <section id="skills" class="section">
-        <div class="container">
-          <h2>Skills</h2>
-
-          <div class="grid-2">
-            <div class="card soft">
-              <h3 class="h4">Programming</h3>
-              <p class="muted">Java, C/C++, C#, SystemVerilog, Python, Swift, SQL, Bash, Assembly</p>
+        <div class="container story">
+          <!-- Visuals: one per step, cross-fade as steps become active.
+               To use a photo, replace a .story-card.tile with <img class="story-card" src="..." alt="">. -->
+          <div class="story-visuals" aria-hidden="true">
+            <div class="story-visual is-active" data-step="0">
+              <div class="story-card tile">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="1.6">
+                  <path d="M16 18L32 30M32 30L48 16M32 30L22 46M32 30L46 44M22 46L46 44M16 18L22 46" opacity=".55" />
+                  <circle cx="16" cy="18" r="4.5" fill="currentColor" />
+                  <circle cx="48" cy="16" r="4.5" fill="currentColor" />
+                  <circle cx="32" cy="30" r="5.5" fill="currentColor" />
+                  <circle cx="22" cy="46" r="4.5" fill="currentColor" />
+                  <circle cx="46" cy="44" r="4.5" fill="currentColor" />
+                </svg>
+                <span>LEMUR Lab · UCLA</span>
+              </div>
             </div>
-
-            <div class="card soft">
-              <h3 class="h4">Tools &amp; Platforms</h3>
-              <p class="muted">Arduino, Raspberry Pi, Cadence Virtuoso, ModelSim, Unity, Git, LTSpice, HSpice</p>
+            <div class="story-visual" data-step="1">
+              <div class="story-card tile">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+                  <path d="M18 18L46 46M46 18L18 46" />
+                  <rect x="26" y="26" width="12" height="12" rx="3" fill="currentColor" />
+                  <circle cx="16" cy="16" r="8" opacity=".6" />
+                  <circle cx="48" cy="16" r="8" opacity=".6" />
+                  <circle cx="16" cy="48" r="8" opacity=".6" />
+                  <circle cx="48" cy="48" r="8" opacity=".6" />
+                </svg>
+                <span>MIT Lincoln Laboratory</span>
+              </div>
+            </div>
+            <div class="story-visual" data-step="2">
+              <img class="story-card" src="assets/img/microflier-closeup.jpg" alt="" loading="lazy" />
+            </div>
+            <div class="story-visual" data-step="3">
+              <div class="story-card tile">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round">
+                  <path d="M10 22h44a4 4 0 0 1 4 4v14a4 4 0 0 1-4 4H40l-4-6h-8l-4 6H10a4 4 0 0 1-4-4V26a4 4 0 0 1 4-4z" />
+                  <circle cx="21" cy="33" r="5" fill="currentColor" />
+                  <circle cx="43" cy="33" r="5" fill="currentColor" />
+                  <path d="M18 22l4-6h20l4 6" opacity=".6" />
+                </svg>
+                <span>UW Reality Lab</span>
+              </div>
             </div>
           </div>
+
+          <div class="story-steps">
+            <article class="step is-active" data-step="0">
+              <p class="step-meta">LEMUR Lab, UCLA · 2023–present</p>
+              <h3>Battery-free autonomy and swarm navigation</h3>
+              <p>
+                Designing hardware and communication algorithms that let swarms of small, battery-free robots
+                navigate on their own, with Kalman-filter state estimation informed by computer vision.
+              </p>
+            </article>
+            <article class="step" data-step="1">
+              <p class="step-meta">MIT Lincoln Laboratory · 2024–present</p>
+              <h3>Thermal detection and closed-loop UAV guidance</h3>
+              <p>
+                An end-to-end vision and control stack for real-time thermal detection and autonomous UAV guidance,
+                extended with ModalAI and transitioned to the Army Research Laboratory.
+              </p>
+            </article>
+            <article class="step" data-step="2">
+              <p class="step-meta">Iyer Lab, University of Washington · 2021–2022</p>
+              <h3>Origami microfliers for aerial sensor deployment</h3>
+              <p>
+                Solar-powered gliding sensor nodes whose origami bodies change shape mid-air to control how far
+                they drift. I built the nRF52 firmware for low-power sensing and Bluetooth.
+              </p>
+            </article>
+            <article class="step" data-step="3">
+              <p class="step-meta">Reality Lab, University of Washington · 2021–2022</p>
+              <h3>VR interfaces for cross-species embodiment</h3>
+              <p>
+                A Unity VR system for testing how people can inhabit another species' body, mapping human motion
+                onto a physics-driven model of a Giant Pacific Octopus.
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ FEATURE: image grows to fill the screen ============ -->
+      <section class="pin feature" id="feature" data-scrub="pin" aria-labelledby="feature-title">
+        <div class="pin-inner">
+          <div class="feature-media">
+            <img src="assets/img/microflier-flight.jpg" alt="Time-lapse of an origami microflier changing shape as it falls" />
+          </div>
+          <div class="feature-copy container">
+            <p class="kicker">Featured · <em>Science Robotics</em> 2023</p>
+            <h2 class="display" id="feature-title">Shape-changing flight, powered by sunlight.</h2>
+            <dl class="stats">
+              <div><dt><span data-count="414">414</span> mg</dt><dd>total weight</dd></div>
+              <div><dt><span data-count="98">98</span> m</dt><dd>flight distance</dd></div>
+              <div><dt><span data-count="60">60</span> m</dt><dd>Bluetooth range</dd></div>
+            </dl>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============ PUBLICATIONS ============ -->
+      <section class="section" id="publications">
+        <div class="container">
+          <div class="section-heading reveal">
+            <h2>Selected Publications</h2>
+            <a class="pill" href="https://scholar.google.com/citations?user=KkppI1QAAAAJ&amp;hl=en" target="_blank" rel="noopener">Google Scholar</a>
+          </div>
+
+          <!-- IEEE CASE 2025 -->
+          <article class="pub-feature reveal">
+            <div class="pub-media-left">
+              <!-- Swap this tile for a paper figure: <img class="pub-thumb" src="assets/img/..." alt="..."> -->
+              <div class="pub-thumb tile" aria-hidden="true">
+                <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round">
+                  <path d="M8 20V12h8M48 12h8v8M56 44v8h-8M16 52H8v-8" />
+                  <circle cx="32" cy="32" r="10" />
+                  <path d="M32 16v8M32 40v8M16 32h8M40 32h8" opacity=".6" />
+                  <circle cx="32" cy="32" r="2.5" fill="currentColor" />
+                </svg>
+                <span>IEEE CASE 2025</span>
+              </div>
+            </div>
+            <div class="pub-details">
+              <h3 class="pub-title">Computer Vision Informed Parameter Estimation</h3>
+              <p class="pub-authors">M. Hernandez, <strong>B. T. Elberier</strong>, A. Mehta</p>
+              <p class="pub-venue"><em>IEEE International Conference on Automation Science and Engineering (CASE)</em>, 2025.</p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1109/CASE58245.2025.11163858" target="_blank" rel="noopener">DOI</a>
+              </p>
+            </div>
+            <div class="pub-media-right"></div>
+          </article>
+
+          <!-- Science Robotics 2023 -->
+          <article class="pub-feature reveal">
+            <div class="pub-media-left">
+              <img
+                class="pub-thumb"
+                src="assets/img/microflier-flight.jpg"
+                alt="Time-lapse of an origami microflier changing shape as it falls"
+                loading="lazy"
+              />
+            </div>
+            <div class="pub-details">
+              <h3 class="pub-title">Solar-powered Shape-changing Origami Microfliers</h3>
+              <p class="pub-authors">
+                K. Johnson, V. Arroyos, A. Ferran, R. Villanueva, D. Yin, <strong>T. Elberier</strong>, A. Aliseda,
+                S. Fuller, V. Iyer, S. Gollakota
+              </p>
+              <p class="pub-venue"><em>Science Robotics</em>, 2023.</p>
+              <p class="pub-links">
+                <a href="https://doi.org/10.1126/scirobotics.adg4276" target="_blank" rel="noopener">DOI</a> ·
+                <a href="https://arxiv.org/abs/2309.06725" target="_blank" rel="noopener">arXiv</a> ·
+                <a href="https://origamifliers.cs.washington.edu/" target="_blank" rel="noopener">Project</a> ·
+                <a href="https://www.youtube.com/watch?v=-pE4-DXTsXk" target="_blank" rel="noopener">Video</a> ·
+                <a href="https://zenodo.org/records/8247362" target="_blank" rel="noopener">Data &amp; Code</a>
+              </p>
+              <p class="pub-press">
+                Press:
+                <a href="https://www.washington.edu/news/2023/09/13/battery-free-robots-use-origami-to-change-shape-in-mid-air/" target="_blank" rel="noopener">UW News</a> ·
+                <a href="https://news.cs.washington.edu/2023/09/13/battery-free-origami-microfliers-from-uw-researchers-offer-a-new-bio-inspired-future-of-flying-machines/" target="_blank" rel="noopener">Allen School News</a>
+              </p>
+            </div>
+            <div class="pub-media-right">
+              <!-- Click-to-play: shows a local thumbnail and swaps in the YouTube player on click (see js/main.js) -->
+              <a
+                class="pub-video yt"
+                href="https://www.youtube.com/watch?v=-pE4-DXTsXk"
+                data-yt="-pE4-DXTsXk"
+                target="_blank"
+                rel="noopener"
+                aria-label="Play video: Battery-free origami microfliers take flight"
+              >
+                <img src="assets/img/microflier-video.jpg" alt="" loading="lazy" />
+                <span class="yt-play" aria-hidden="true">
+                  <svg viewBox="0 0 68 48"><path d="M66.5 7.7a8.5 8.5 0 0 0-6-6C55.2.3 34 .3 34 .3s-21.2 0-26.5 1.4a8.5 8.5 0 0 0-6 6C.1 13 .1 24 .1 24s0 11 1.4 16.3a8.5 8.5 0 0 0 6 6C12.8 47.7 34 47.7 34 47.7s21.2 0 26.5-1.4a8.5 8.5 0 0 0 6-6C67.9 35 67.9 24 67.9 24s0-11-1.4-16.3z" fill="#f00"/><path d="M45 24L27 14v20z" fill="#fff"/></svg>
+                </span>
+              </a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- ============ JOURNEY: line fills as you scroll ============ -->
+      <section class="section alt" id="journey">
+        <div class="container">
+          <p class="kicker reveal">Journey</p>
+          <h2 class="display reveal">From circuits to microrobots.</h2>
+
+          <ol class="journey" data-scrub="through">
+            <li class="milestone reveal">
+              <span class="m-year">2025</span>
+              <div class="m-card">
+                <h3>Began the Ph.D. at UCLA</h3>
+                <p>Completed my M.S. and presented computer-vision-informed parameter estimation at IEEE CASE.</p>
+              </div>
+            </li>
+            <li class="milestone reveal">
+              <span class="m-year">2024</span>
+              <div class="m-card">
+                <h3>GEM Fellow at MIT Lincoln Laboratory</h3>
+                <p>Built a real-time thermal detection and UAV guidance stack across two research appointments.</p>
+              </div>
+            </li>
+            <li class="milestone reveal">
+              <span class="m-year">2023</span>
+              <div class="m-card">
+                <h3>Joined the LEMUR Lab · <em>Science Robotics</em></h3>
+                <p>Started graduate research with Ankur Mehta; our origami microfliers were published in <em>Science Robotics</em>.</p>
+              </div>
+            </li>
+            <li class="milestone reveal">
+              <span class="m-year">2022</span>
+              <div class="m-card">
+                <h3>Silicon Design Engineer at AMD</h3>
+                <p>Bridged silicon design with firmware, verification, and SoC teams on client products.</p>
+              </div>
+            </li>
+            <li class="milestone reveal">
+              <span class="m-year">2022</span>
+              <div class="m-card">
+                <h3>NASA Space Grant · B.S. from UW</h3>
+                <p>Designed HMAC-based secure uplink/downlink messaging for the UW CubeSat team's SOC-I satellite.</p>
+              </div>
+            </li>
+            <li class="milestone reveal">
+              <span class="m-year">2021</span>
+              <div class="m-card">
+                <h3>First research: Iyer Lab &amp; Reality Lab</h3>
+                <p>Began building battery-free origami microfliers and a VR system for cross-species embodiment.</p>
+              </div>
+            </li>
+            <li class="milestone reveal">
+              <span class="m-year">2020–21</span>
+              <div class="m-card">
+                <h3>Engineering internships</h3>
+                <p>Low-power custom circuits at Dialog Semiconductor and an iOS app at FishTail Design Automation.</p>
+              </div>
+            </li>
+            <li class="milestone reveal">
+              <span class="m-year">2017</span>
+              <div class="m-card">
+                <h3>Started ECE at the University of Washington</h3>
+                <p>Concentrations in embedded computing systems and digital VLSI.</p>
+              </div>
+            </li>
+          </ol>
+        </div>
+      </section>
+
+      <!-- ============ TEACHING & HONORS ============ -->
+      <section class="section" id="teaching">
+        <div class="container">
+          <p class="kicker reveal">Teaching &amp; Mentorship</p>
+          <h2 class="display reveal">Passing it forward.</h2>
+
+          <div class="columns">
+            <div class="card reveal">
+              <h3 class="h5">Teaching Assistant</h3>
+              <ul class="bullets">
+                <li><strong>UCLA ECE 180DA/DW</strong> — Systems Design Capstone</li>
+                <li><strong>UW CSE 371</strong> — Design of Digital Circuits and Systems</li>
+                <li><strong>UW CSE 369</strong> — Introduction to Digital Design</li>
+                <li><strong>UW EE 393</strong> — Advanced Technical Communications</li>
+                <li><strong>UW GENST 199</strong> — The University Community</li>
+              </ul>
+            </div>
+            <div class="card reveal">
+              <h3 class="h5">Outreach &amp; Service</h3>
+              <ul class="bullets">
+                <li>AVELA instructor, Introductory Embedded Systems (Seattle Public Schools)</li>
+                <li>AVELA instructor, Intermediate Python Programming (Seattle Public Schools)</li>
+                <li>Speaker, UCLA ECE Graduate Orientation (2025)</li>
+                <li>Speaker, UW ECE Undergraduate Orientation (2021)</li>
+                <li>Curriculum Committee Representative, UW ECE (2021–2022)</li>
+              </ul>
+            </div>
+          </div>
+
+          <h3 class="h5 honors-title reveal" id="awards">Honors &amp; Fellowships</h3>
+          <ul class="award-list">
+            <li class="reveal"><span>2024</span> National GEM Consortium Fellowship</li>
+            <li class="reveal"><span>2022</span> NASA Space Grant</li>
+            <li class="reveal"><span>2021</span> Boeing Emerging Leader Scholarship, UW College of Engineering</li>
+            <li class="reveal"><span>2021</span> NACME Corporate Scholarship</li>
+            <li class="reveal"><span>2021</span> Kenneth and Sylvia Steen Endowed Scholarship, UW ECE</li>
+            <li class="reveal"><span>2021</span> Lawrence and Lucille Frey Endowed Scholarship, UW ECE</li>
+            <li class="reveal"><span>2020</span> Arthur Burman Winter Endowed Scholarship, UW ECE</li>
+            <li class="reveal"><span>2020, 2021</span> National Action Council for Minorities in Engineering Scholarship</li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ============ CONTACT ============ -->
+      <section class="contact" id="contact">
+        <div class="container">
+          <p class="kicker reveal">Contact</p>
+          <h2 class="display reveal">Let's talk research.</h2>
+          <p class="contact-lede reveal">
+            I'm always happy to talk about microrobotics, embedded systems, and collaborations.
+          </p>
+          <p class="reveal">
+            <a class="pill solid big" href="mailto:tilboon@g.ucla.edu">tilboon@g.ucla.edu</a>
+          </p>
         </div>
       </section>
     </main>
 
-    <footer class="site-footer" id="site-footer">
-      <div class="container">
-        <p class="meta">
-          &copy; <span id="year"></span> Brair 'Tilboon' Elberier. Last updated <span id="updated"></span>.<br />
-          Email: <a href="mailto:tilboon.elberier@gmail.com">tilboon.elberier@gmail.com</a><br />
-          LinkedIn: <a href="https://www.linkedin.com/in/tilboon" target="_blank" rel="noreferrer">linkedin.com/in/tilboon</a><br />
-          Location: Los Angeles, CA
-        </p>
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <p>LEMUR Lab · UCLA Electrical &amp; Computer Engineering · Los Angeles, CA</p>
+        <p>&copy; <span id="year"></span> Brair (Tilboon) Elberier · Updated <span id="updated"></span></p>
       </div>
     </footer>
 
